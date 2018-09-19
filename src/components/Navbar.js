@@ -108,7 +108,9 @@ const Wrapper = styled.div`
       top: ${props => (props.open ? '0' : '7px')};
       transform: ${props => props.open && 'rotate(270deg)'};
       transition: ${props =>
-        props.open ? 'all 0.3s ease-in 0.2s' : 'all 0.3s ease-in'};
+        props.open
+          ? 'top 0.3s ease-ins, transform .3s ease-in .2s'
+          : 'all 0.3s ease-in'};
     }
   }
 
@@ -119,6 +121,18 @@ const Wrapper = styled.div`
     z-index: 10;
     cursor: pointer;
     margin-top: 10px;
+
+    &:hover {
+      .menu-icon::before {
+        animation: ${props =>
+          props.open ? 'none' : `${menuHoverTop} 1s infinite`};
+      }
+
+      .menu-icon::after {
+        animation: ${props =>
+          props.open ? 'none' : `${menuHoverBottom} 1s infinite`};
+      }
+    }
   }
 `;
 
