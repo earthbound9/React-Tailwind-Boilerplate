@@ -2,13 +2,35 @@ import { keyframes } from 'styled-components';
 
 const slideUp = keyframes`
   0% {
-    transform: translateY(200px);
+    transform: translateY(300px);
   }
+
   75% {
     transform: translateY(-25px);
   }
+
   100% {
     transform: translateY(0);
+  }
+`;
+
+const slideRight = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-1500px);
+  }
+
+  50% {
+    transform: translateX(-1500px);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateX(150px);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 `;
 
@@ -62,6 +84,7 @@ const menuCloseBottom = keyframes`
 
 export {
   slideUp,
+  slideRight,
   menuHoverTop,
   menuHoverBottom,
   menuCloseTop,
